@@ -41,7 +41,6 @@ def validate_invoice_data(invoice_df, line_items_df, total_summary_df):
             invoice_df['place_of_origin'].notna() &
             invoice_df['receiver_name'].notna() &
             invoice_df['gstin_supplier'].notna() &
-            invoice_df['gstin_recipient'].notna() &
             (invoice_df['taxable_value'].notna() | invoice_df['invoice_value'].notna()) &
             invoice_df['tax_amount'].notna()
         )
