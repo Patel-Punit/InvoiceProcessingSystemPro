@@ -90,7 +90,7 @@ def validate_invoice_data(invoice_df, line_items_df, total_summary_df):
     def check_data_types():
         try:
             # Check invoice_df date formats
-            invoice_df['invoice_date'] = pd.to_datetime(invoice_df['invoice_date'], format='%d-%b-%y')
+            invoice_df['invoice_date'] = pd.to_datetime(invoice_df['invoice_date'], format='%d-%b-%Y')
             
             # Check numeric columns in invoice_df
             numeric_cols_invoice = ['place_of_supply', 'place_of_origin', 'taxable_value', 
