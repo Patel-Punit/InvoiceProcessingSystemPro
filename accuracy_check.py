@@ -91,8 +91,6 @@ def validate_invoice_data(invoice_df, line_items_df, total_summary_df):
         try:
             # Check invoice_df date formats
             invoice_df['invoice_date'] = pd.to_datetime(invoice_df['invoice_date'], format='%d-%b-%y')
-            if not pd.isna(invoice_df['due_date']).all():
-                invoice_df['due_date'] = pd.to_datetime(invoice_df['due_date'], format='%d-%b-%y')
             
             # Check numeric columns in invoice_df
             numeric_cols_invoice = ['place_of_supply', 'place_of_origin', 'taxable_value', 
